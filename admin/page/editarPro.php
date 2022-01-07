@@ -47,7 +47,7 @@ while ($row = $result1->fetch_assoc()) {
   <img src="../../uploads/<?php echo $foto ?>" id="imgshow" class="img-fluid">
   <div class="col-md-4 mt-3">
     <label for="foto" class="form-group form label">Foto</label>
-    <input type="file" name="foto" class="inputfile inputfile-2" accept="image/*" id="imgload" selected value="C:\\xampp\\htdocs\\Enjed\\uploads\\Camisa_5528183.png" />
+    <input type="file" name="foto" class="inputfile inputfile-2" accept="image/*" id="imgload" />
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Nombre</label>

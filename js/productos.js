@@ -1,8 +1,5 @@
 $(document).ready(function () {
   load_data()
-
-
-
 });
   // funcion para traer los datos de categoria
   function load_data(query) {
@@ -16,7 +13,6 @@ $(document).ready(function () {
             $('#result').html(data);
         }
     });
-
 }
 
 function addFavorite(id){

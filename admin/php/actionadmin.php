@@ -79,20 +79,75 @@ if (isset($_POST['product_insert'])) {
 }
 
 if (isset($_POST['actualizarProducto'])) {
-    $id_categoria=$_POST['id'];
+    $id=$_POST['id'];
     $nombre=$_POST['nombre'];
+    $color= $_POST['color'];
+    $descuento= $_POST['descuento'];
+    $cantidad= $_POST['cantidad'];
+    $tallas= $_POST['tallas'];
+    $precio= $_POST['precio'];
+    $categoria= $_POST['categoria'];
+    $descripcion_producto= $_POST['descripcion_producto'];
+    $etiqueta= $_POST['etiqueta'];
     $imagen=$_POST['imagen'];
-    $foto=$_POST['foto'];
-    echo json_encode(array('error'=>true, 'tipo'=>$imagen.$foto));
-        exit;
-    $query = "UPDATE categoria set nombre='$nombre',descripcion='$descripcion_categoria'WHERE id_categoria='$id_categoria'";
+
+    $tmp = $_FILES['foto']['tmp_name'];
+    $tmp1 = $_FILES['foto']['name'];
+
+    if(file_exists($tmp)){
+
+    $extension = pathinfo($tmp1, PATHINFO_EXTENSION);
+    $foto = $nombre."_". rand(0, 9999999) . "." . $extension;
+    $x = preg_replace("/\r/", "", $foto);
+    move_uploaded_file($tmp, "../../uploads/" . $x);
+
+    $query = "UPDATE productos set 
+    nombre='$nombre',
+    foto='$foto',
+    color='$color',
+    descuento='$descuento',
+    cantidad='$cantidad',
+    talla='$tallas',
+    precio='$precio',
+    categoria='$categoria',
+    descripcion='$descripcion_producto',
+    etiqueta='$etiqueta'
+    WHERE id='$id'";
     $resultado = $conexion->query($query);
     if ($resultado) {
+
+        $ruta="../../uploads/";
+        unlink($ruta . $imagen);
+
         echo json_encode(array('error'=>false, 'tipo'=>''));
     }else{
         echo json_encode(array('error'=>true, 'tipo'=>'La categoria ya existe '.$conexion->error));
         exit;
     }
+    }else{
+
+    $query = "UPDATE productos set 
+    nombre='$nombre',
+    color='$color',
+    descuento='$descuento',
+    cantidad='$cantidad',
+    talla='$tallas',
+    precio='$precio',
+    categoria='$categoria',
+    descripcion='$descripcion_producto',
+    etiqueta='$etiqueta'
+    WHERE id='$id'";
+    $resultado = $conexion->query($query);
+    if ($resultado) {
+
+        echo json_encode(array('error'=>false, 'tipo'=>''));
+    }else{
+        echo json_encode(array('error'=>true, 'tipo'=>'La categoria ya existe '.$conexion->error));
+        exit;
+    }
+    }
+
+    
 }
 // admin
 if (isset($_POST['administradores_insert'])) {
