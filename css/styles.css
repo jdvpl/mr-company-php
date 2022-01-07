@@ -1,0 +1,144 @@
+
+body {
+	background: #eee !important;	
+}
+
+.login-form{
+	margin:4% auto 0;
+	max-width:440px;
+}
+
+
+.form-header,.form-footer{
+	background-color: rgba(255, 255, 255, .8);
+  	border: 1px solid rgba(0,0,0,0.1);
+}
+
+.form-signin{
+	padding: 45px 35px 45px;
+  	background-color: #fff;
+  	border: 1px solid rgba(0,0,0,0.1);  
+  	border-bottom: 0px; 
+  	border-top: 0px;  
+}
+
+
+.form-header{
+	text-align: center;
+	padding: 15px 40px;
+	border-radius: 10px 10px 0 0;
+}
+.form-header i{font-size:60px;}
+
+.btn-login{
+	background-color: #3498db !important;
+    color: #ffffff !important;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.form-signin .form-control, .form-register .form-control{
+  position: relative;
+  height: auto;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 10px;
+  font-size: 16px;
+}
+.form-signin .form-control:focus{
+  z-index: 2;
+}
+
+.form-signin input[type="email"] {
+  margin-bottom: -1px;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.form-signin input[type="password"] {
+  margin-bottom: 30px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+i{margin-right: 4%;}
+
+.row{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+td,th{
+    white-space: nowrap !important;
+    text-align: center;
+}
+footer ul li a{
+    overflow-wrap: anywhere !important;
+}
+
+.correo{
+    overflow-wrap: anywhere !important;
+}
+@media only screen and (max-width: 600px) {
+    #labelcustom {
+      
+        font-size:.7rem;
+    }
+  }
+
+  .pagination{
+      overflow: auto;
+      margin: auto;
+  }
+
+
+  .form-group {
+
+    margin-bottom: 0 !important;
+}
+.label{
+    margin-bottom: 0.2rem !important;
+}
+
+
+
+.check-text input {
+    display: none;
+  }
+  .check-text input ~ span {
+    color: #333;
+    cursor: pointer;
+    border-radius: 2px;
+    padding-top: 1px;
+    font-weight: 200;
+  }
+  .check-text input ~ .checked {
+    display: none;
+  }
+  .check-text input:checked ~ .checked {
+    display: inline-block;
+  }
+  .check-text input:checked ~ .unchecked {
+    display: none;
+  }
+  .check-text input:disabled ~ span {
+    color: #999;
+    cursor: not-allowed;
+  }
+  .tooltip{
+    z-index:100000000;
+}
+
+
+/* scroll */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: white;
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #000;
+    width: 5px;
+}

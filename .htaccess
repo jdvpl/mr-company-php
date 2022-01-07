@@ -1,0 +1,13 @@
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+RewriteEngine on
+RewriteBase /
+RewriteBase /enjed/
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteCond %{SCRIPT_FILENAME} !-f
+
+# RewriteRule ^admin/category?$ admin/page/categoria.php
+
+RewriteRule ^(.*)$ $1.php
+</IfModule>
