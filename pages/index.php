@@ -8,8 +8,7 @@
     require "../includes/main.php";
   ?>
 </div>
-
 <?php
 require "../includes/footer.php";
 ?>
-
+<script src="../js/productos.min.js"></script>
