@@ -7,10 +7,11 @@ date_default_timezone_set("America/Bogota");
 $id_user=$_SESSION['id_user'];
 $tipo=$_POST["tipo"];
 $id=$_POST["id"];
+$fecha = date('Y-m-d H:i:s');
 
 
 if($tipo=="agregar"){
-    $query = "INSERT INTO favoritos(id_user,id_producto )VALUES('$id_user','$id')";
+    $query = "INSERT INTO favoritos(id_user,id_producto,fecha )VALUES('$id_user','$id','$fecha')";
     $resultado = $conexion->query($query);
     $error = $conexion->error;
     if ($resultado) {

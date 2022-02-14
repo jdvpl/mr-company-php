@@ -64,12 +64,15 @@ if (isset($_POST['product_insert'])) {
     $extension = pathinfo($tmp1, PATHINFO_EXTENSION);
     $imagen = $nombre_producto."_". rand(0, 9999999) . "." . $extension;
     $x = preg_replace("/\r/", "", $imagen);
-    move_uploaded_file($tmp, "../../uploads/" . $x);
     
 
     $query = "INSERT INTO productos (nombre,foto,color,descuento,cantidad,talla,precio,categoria,descripcion,etiqueta) VALUES ('$nombre_producto', '$imagen','$color','$descuento','$cantidad','$tallas','$precio','$categoria','$descripcion_producto','$etiqueta')";
     $resultado = $conexion->query($query);
     if ($resultado) {
+
+        
+        move_uploaded_file($tmp, "../../uploads/" . $x);
+
         echo json_encode(array('error'=>false, 'tipo'=>$query.$x, $extension));
     }else{
         echo json_encode(array('error'=>true, 'tipo'=>'Error '.$conexion->error.$query.$x, $extension));
@@ -114,16 +117,16 @@ if (isset($_POST['actualizarProducto'])) {
     etiqueta='$etiqueta'
     WHERE id='$id'";
     $resultado = $conexion->query($query);
-    if ($resultado) {
+        if ($resultado) {
 
-        $ruta="../../uploads/";
-        unlink($ruta . $imagen);
+            $ruta="../../uploads/";
+            unlink($ruta . $imagen);
 
-        echo json_encode(array('error'=>false, 'tipo'=>''));
-    }else{
-        echo json_encode(array('error'=>true, 'tipo'=>'La categoria ya existe '.$conexion->error));
-        exit;
-    }
+            echo json_encode(array('error'=>false, 'tipo'=>''));
+        }else{
+            echo json_encode(array('error'=>true, 'tipo'=>'La categoria ya existe '.$conexion->error));
+            exit;
+        }
     }else{
 
     $query = "UPDATE productos set 

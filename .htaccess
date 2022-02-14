@@ -1,13 +1,16 @@
 Options -Indexes
+Options +FollowSymLinks
+
+RewriteEngine on
+RewriteRule ^pages/detalle/([0-9]+)$ pages/detalle.php?id=$1
 
 <IfModule mod_rewrite.c>
-RewriteEngine on
-RewriteBase /
 RewriteBase /mr/
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteRule ^(.*)$ $1.php
+
 
 # RewriteRule ^admin/category?$ admin/page/categoria.php
 
-RewriteRule ^(.*)$ $1.php
 </IfModule>

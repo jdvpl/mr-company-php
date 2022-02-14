@@ -3,7 +3,7 @@
 
   <div class="col-md-6 m-auto">
   <h3 class="mt-5 text-center">Crea un nuevo producto</h3>
-<form method="post" enctype="multipart/form-data" class="form" id="producto_form">
+<form method="post" enctype="multipart/form-data" class="form" id="producto_form" novalidate>
   <input type="hidden" class="form-control"  required name="product_insert">
   <div class="mb-3">
     <label class="form-label">Nombre producto</label>
@@ -48,7 +48,7 @@
   </div>
   <!--descripcion -->
   <div class="">
-      <textarea name="descripcion_producto" id="" cols="30" required rows="3" class="form-control" placeholder="Descripcion del producto"></textarea>
+      <textarea name="descripcion_producto" id="editor" cols="30" required rows="3" class="form-control" placeholder="Descripcion del producto"></textarea>
   </div>
 
   <div class="mb-3">

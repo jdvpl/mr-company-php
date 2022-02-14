@@ -31,7 +31,7 @@ $numero = $numero + 1;
 $uno=1;
 $clase="favorito";
 $output .= '
-<div class="col-md-3">
+<div class="col-md-3" onClick="window.open(\'detalle/'.$row['id'].'/\')">
   <img src="../uploads/'.$row["foto"].'" class="card-img-top w-100" alt="..." >
   <div class="card-body">
   <p> <b>$ '.(($uno-($row["descuento"]/100))* $row["precio"]) . '</b> </p>

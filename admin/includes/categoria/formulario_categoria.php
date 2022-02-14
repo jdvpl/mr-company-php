@@ -10,7 +10,7 @@
   </div>
   <!--descripcion -->
   <div class="">
-      <textarea name="descripcion_categoria" id="" cols="30" required rows="3" class="form-control" placeholder="Descripcion de la categoria"></textarea>
+      <textarea name="descripcion_categoria" id="editor" cols="30" required rows="3" class="form-control" placeholder="Descripcion de la categoria"></textarea>
   </div>
     <div class="alerts py-3 m-auto col-md-12">
         <div id="validacion" class="email text-center" role="alert">

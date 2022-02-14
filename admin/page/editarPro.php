@@ -41,7 +41,7 @@ while ($row = $result1->fetch_assoc()) {
 <form method="post" enctype="multipart/form-data" class="form" id="actualizar_producto_form">
     <input type="hidden" class="form-control"  name="actualizarProducto" value="actualizarProducto">
     <input type="hidden" class="form-control"  name="id" value="<?php echo $id; ?>">
-    <input type="text" class="form-control"  name="imagen" value="<?php echo $foto; ?>">
+    <input type="hidden" class="form-control"  name="imagen" value="<?php echo $foto; ?>">
 
   
   <img src="../../uploads/<?php echo $foto ?>" id="imgshow" class="img-fluid">
@@ -98,7 +98,11 @@ while ($row = $result1->fetch_assoc()) {
 
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Descripcion</label>
-    <input type="text" class="form-control"  required name="descripcion_producto" value="<?php echo $descripcion_producto; ?>">
+
+    <textarea name="descripcion_producto" id="editor"  class="form-control" placeholder="Descripcion del producto">
+      <?php echo $descripcion_producto; ?>
+    </textarea>
+
   </div>
   <div class="mb-3">
     <label for="exampleInputEmail1" class="form-label">Etiqueta</label>
@@ -119,3 +123,17 @@ while ($row = $result1->fetch_assoc()) {
   </div>
   
   <script src="../js/productos.min.js"></script>
+
+  <script src="../js/ckeditor.js"></script>
+<script>
+	ClassicEditor
+		.create( document.querySelector( '#editor' ), {
+			// toolbar: [ 'heading', '|', 'bold', 'italic', 'link' ]
+		} )
+		.then( editor => {
+			window.editor = editor;
+		} )
+		.catch( err => {
+			console.error( err.stack );
+		} );
+</script>
